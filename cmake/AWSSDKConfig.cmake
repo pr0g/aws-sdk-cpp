@@ -112,34 +112,6 @@ else()
     endif()
 endif()
 
-
-find_library(AWSSDK_CORE_LIB_FILE aws-cpp-sdk-core${CMAKE_DEBUG_POSTFIX}
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}"
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}/Debug"
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}/DebugOpt"
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}/Release"
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}/RelWithDebInfo"
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}/MinSizeRel"
-        NO_DEFAULT_PATH)
-
-
-if (NOT AWSSDK_CORE_LIB_FILE)
-    message(FATAL_ERROR "AWS SDK for C++ headers found, but we were unable to locate the binaries. Have you deleted or moved it?
-            Please make sure header files and binaries are located in INSTALL_ROOT_DIR/INCLUDE_DIR/ and INSTALL_ROOT_DIR/LIB_DIR/[PLATFORM_PREFIX]/[Debug|Config|OtherConfigs]")
-endif()
-
-# based on AWSSDK_CORE_LIB_FILE path, inspects the actual AWSSDK_PLATFORM_PREFIX
-get_filename_component(TEMP_PATH "${AWSSDK_CORE_LIB_FILE}" PATH)
-get_filename_component(TEMP_NAME "${TEMP_PATH}" NAME)
-
-if (LIB_SEARCH_PREFIX)
-    while (NOT TEMP_NAME STREQUAL "${LIB_SEARCH_PREFIX}")
-        set(TEMP_PLATFORM_PREFIX "${TEMP_NAME}/${TEMP_PLATFORM_PREFIX}")
-        get_filename_component(TEMP_PATH "${TEMP_PATH}" PATH)
-        get_filename_component(TEMP_NAME "${TEMP_PATH}" NAME)
-    endwhile()
-endif()
-
 set(AWSSDK_PLATFORM_PREFIX "${TEMP_PLATFORM_PREFIX}")
 
 set(AWSSDK_FOUND TRUE)
