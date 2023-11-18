@@ -47,9 +47,11 @@ static const int SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("
 static const int SUBNET_ALREADY_IN_USE_HASH = HashingUtils::HashString("SubnetAlreadyInUse");
 static const int D_B_CLUSTER_ENDPOINT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterEndpointNotFoundFault");
 static const int D_B_INSTANCE_ROLE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBInstanceRoleAlreadyExists");
+static const int INTEGRATION_CONFLICT_OPERATION_FAULT_HASH = HashingUtils::HashString("IntegrationConflictOperationFault");
 static const int RESERVED_D_B_INSTANCES_OFFERING_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedDBInstancesOfferingNotFound");
 static const int INVALID_D_B_PARAMETER_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBParameterGroupState");
 static const int D_B_PROXY_ENDPOINT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBProxyEndpointQuotaExceededFault");
+static const int TENANT_DATABASE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("TenantDatabaseQuotaExceeded");
 static const int D_B_PROXY_TARGET_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBProxyTargetNotFoundFault");
 static const int INVALID_D_B_SECURITY_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBSecurityGroupState");
 static const int D_B_CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBClusterSnapshotAlreadyExistsFault");
@@ -59,6 +61,7 @@ static const int INVALID_D_B_INSTANCE_STATE_FAULT_HASH = HashingUtils::HashStrin
 static const int D_B_SUBNET_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBSubnetQuotaExceededFault");
 static const int D_B_CLUSTER_SNAPSHOT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterSnapshotNotFoundFault");
 static const int D_B_CLUSTER_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBClusterAlreadyExistsFault");
+static const int INVALID_INTEGRATION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidIntegrationStateFault");
 static const int D_B_PROXY_TARGET_ALREADY_REGISTERED_FAULT_HASH = HashingUtils::HashString("DBProxyTargetAlreadyRegisteredFault");
 static const int AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("AuthorizationAlreadyExists");
 static const int D_B_CLUSTER_ROLE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBClusterRoleQuotaExceeded");
@@ -102,6 +105,7 @@ static const int SOURCE_DATABASE_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashSt
 static const int INSUFFICIENT_AVAILABLE_I_PS_IN_SUBNET_FAULT_HASH = HashingUtils::HashString("InsufficientAvailableIPsInSubnetFault");
 static const int D_B_CLUSTER_ENDPOINT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBClusterEndpointAlreadyExistsFault");
 static const int D_B_SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBSubnetGroupAlreadyExists");
+static const int INTEGRATION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("IntegrationQuotaExceededFault");
 static const int INVALID_EXPORT_SOURCE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidExportSourceState");
 static const int EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("EventSubscriptionQuotaExceeded");
 static const int D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBInstanceAlreadyExists");
@@ -112,6 +116,8 @@ static const int INVALID_D_B_CLUSTER_SNAPSHOT_STATE_FAULT_HASH = HashingUtils::H
 static const int D_B_INSTANCE_ROLE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBInstanceRoleQuotaExceeded");
 static const int GLOBAL_CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("GlobalClusterNotFoundFault");
 static const int D_B_PROXY_ENDPOINT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBProxyEndpointAlreadyExistsFault");
+static const int TENANT_DATABASE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("TenantDatabaseAlreadyExists");
+static const int INTEGRATION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("IntegrationAlreadyExistsFault");
 static const int NETWORK_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("NetworkTypeNotSupported");
 static const int PROVISIONED_IOPS_NOT_AVAILABLE_IN_A_Z_FAULT_HASH = HashingUtils::HashString("ProvisionedIopsNotAvailableInAZFault");
 static const int D_B_CLUSTER_AUTOMATED_BACKUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBClusterAutomatedBackupQuotaExceededFault");
@@ -121,6 +127,8 @@ static const int RESOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("Resou
 static const int INVALID_D_B_INSTANCE_AUTOMATED_BACKUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBInstanceAutomatedBackupState");
 static const int INSUFFICIENT_D_B_INSTANCE_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientDBInstanceCapacity");
 static const int RESERVED_D_B_INSTANCE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ReservedDBInstanceQuotaExceeded");
+static const int INTEGRATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("IntegrationNotFoundFault");
+static const int D_B_SNAPSHOT_TENANT_DATABASE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBSnapshotTenantDatabaseNotFoundFault");
 static const int RESERVED_D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ReservedDBInstanceAlreadyExists");
 static const int EXPORT_TASK_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ExportTaskAlreadyExists");
 static const int D_B_PROXY_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBProxyAlreadyExistsFault");
@@ -141,6 +149,7 @@ static const int INVALID_BLUE_GREEN_DEPLOYMENT_STATE_FAULT_HASH = HashingUtils::
 static const int D_B_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("QuotaExceeded.DBSecurityGroup");
 static const int CUSTOM_D_B_ENGINE_VERSION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("CustomDBEngineVersionAlreadyExistsFault");
 static const int EC2_IMAGE_PROPERTIES_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("Ec2ImagePropertiesNotSupportedFault");
+static const int TENANT_DATABASE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("TenantDatabaseNotFound");
 static const int INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientDBClusterCapacityFault");
 static const int POINT_IN_TIME_RESTORE_NOT_ENABLED_FAULT_HASH = HashingUtils::HashString("PointInTimeRestoreNotEnabled");
 static const int SOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SourceNotFound");
@@ -302,6 +311,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_INSTANCE_ROLE_ALREADY_EXISTS_FAULT), false);
     return true;
   }
+  else if (hashCode == INTEGRATION_CONFLICT_OPERATION_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INTEGRATION_CONFLICT_OPERATION_FAULT), false);
+    return true;
+  }
   else if (hashCode == RESERVED_D_B_INSTANCES_OFFERING_NOT_FOUND_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::RESERVED_D_B_INSTANCES_OFFERING_NOT_FOUND_FAULT), false);
@@ -315,6 +329,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == D_B_PROXY_ENDPOINT_QUOTA_EXCEEDED_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_PROXY_ENDPOINT_QUOTA_EXCEEDED_FAULT), false);
+    return true;
+  }
+  else if (hashCode == TENANT_DATABASE_QUOTA_EXCEEDED_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::TENANT_DATABASE_QUOTA_EXCEEDED_FAULT), false);
     return true;
   }
   else if (hashCode == D_B_PROXY_TARGET_NOT_FOUND_FAULT_HASH)
@@ -360,6 +379,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == D_B_CLUSTER_ALREADY_EXISTS_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_CLUSTER_ALREADY_EXISTS_FAULT), false);
+    return true;
+  }
+  else if (hashCode == INVALID_INTEGRATION_STATE_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_INTEGRATION_STATE_FAULT), false);
     return true;
   }
   else if (hashCode == D_B_PROXY_TARGET_ALREADY_REGISTERED_FAULT_HASH)
@@ -577,6 +601,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_SUBNET_GROUP_ALREADY_EXISTS_FAULT), false);
     return true;
   }
+  else if (hashCode == INTEGRATION_QUOTA_EXCEEDED_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INTEGRATION_QUOTA_EXCEEDED_FAULT), false);
+    return true;
+  }
   else if (hashCode == INVALID_EXPORT_SOURCE_STATE_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_EXPORT_SOURCE_STATE_FAULT), false);
@@ -627,6 +656,16 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_PROXY_ENDPOINT_ALREADY_EXISTS_FAULT), false);
     return true;
   }
+  else if (hashCode == TENANT_DATABASE_ALREADY_EXISTS_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::TENANT_DATABASE_ALREADY_EXISTS_FAULT), false);
+    return true;
+  }
+  else if (hashCode == INTEGRATION_ALREADY_EXISTS_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INTEGRATION_ALREADY_EXISTS_FAULT), false);
+    return true;
+  }
   else if (hashCode == NETWORK_TYPE_NOT_SUPPORTED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::NETWORK_TYPE_NOT_SUPPORTED), false);
@@ -670,6 +709,16 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == RESERVED_D_B_INSTANCE_QUOTA_EXCEEDED_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::RESERVED_D_B_INSTANCE_QUOTA_EXCEEDED_FAULT), false);
+    return true;
+  }
+  else if (hashCode == INTEGRATION_NOT_FOUND_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INTEGRATION_NOT_FOUND_FAULT), false);
+    return true;
+  }
+  else if (hashCode == D_B_SNAPSHOT_TENANT_DATABASE_NOT_FOUND_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_SNAPSHOT_TENANT_DATABASE_NOT_FOUND_FAULT), false);
     return true;
   }
   else if (hashCode == RESERVED_D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH)
@@ -727,7 +776,12 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_CLUSTER_BACKTRACK_NOT_FOUND_FAULT), false);
     return true;
   }
-  else if (hashCode == CREATE_CUSTOM_D_B_ENGINE_VERSION_FAULT_HASH)
+  return false;
+}
+
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+{
+  if (hashCode == CREATE_CUSTOM_D_B_ENGINE_VERSION_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::CREATE_CUSTOM_D_B_ENGINE_VERSION_FAULT), false);
     return true;
@@ -767,14 +821,14 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::CUSTOM_D_B_ENGINE_VERSION_ALREADY_EXISTS_FAULT), false);
     return true;
   }
-  return false;
-}
-
-static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
-{
-  if (hashCode == EC2_IMAGE_PROPERTIES_NOT_SUPPORTED_FAULT_HASH)
+  else if (hashCode == EC2_IMAGE_PROPERTIES_NOT_SUPPORTED_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::EC2_IMAGE_PROPERTIES_NOT_SUPPORTED_FAULT), false);
+    return true;
+  }
+  else if (hashCode == TENANT_DATABASE_NOT_FOUND_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::TENANT_DATABASE_NOT_FOUND_FAULT), false);
     return true;
   }
   else if (hashCode == INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT_HASH)

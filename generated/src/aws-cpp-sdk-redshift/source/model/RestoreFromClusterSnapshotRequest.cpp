@@ -56,7 +56,10 @@ RestoreFromClusterSnapshotRequest::RestoreFromClusterSnapshotRequest() :
     m_encryptedHasBeenSet(false),
     m_manageMasterPassword(false),
     m_manageMasterPasswordHasBeenSet(false),
-    m_masterPasswordSecretKmsKeyIdHasBeenSet(false)
+    m_masterPasswordSecretKmsKeyIdHasBeenSet(false),
+    m_ipAddressTypeHasBeenSet(false),
+    m_multiAZ(false),
+    m_multiAZHasBeenSet(false)
 {
 }
 
@@ -255,6 +258,16 @@ Aws::String RestoreFromClusterSnapshotRequest::SerializePayload() const
   if(m_masterPasswordSecretKmsKeyIdHasBeenSet)
   {
     ss << "MasterPasswordSecretKmsKeyId=" << StringUtils::URLEncode(m_masterPasswordSecretKmsKeyId.c_str()) << "&";
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+    ss << "IpAddressType=" << StringUtils::URLEncode(m_ipAddressType.c_str()) << "&";
+  }
+
+  if(m_multiAZHasBeenSet)
+  {
+    ss << "MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
 
   ss << "Version=2012-12-01";

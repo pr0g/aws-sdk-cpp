@@ -128,7 +128,11 @@ DBInstance::DBInstance() :
     m_readReplicaSourceDBClusterIdentifierHasBeenSet(false),
     m_percentProgressHasBeenSet(false),
     m_dedicatedLogVolume(false),
-    m_dedicatedLogVolumeHasBeenSet(false)
+    m_dedicatedLogVolumeHasBeenSet(false),
+    m_isStorageConfigUpgradeAvailable(false),
+    m_isStorageConfigUpgradeAvailableHasBeenSet(false),
+    m_multiTenant(false),
+    m_multiTenantHasBeenSet(false)
 {
 }
 
@@ -240,7 +244,11 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_readReplicaSourceDBClusterIdentifierHasBeenSet(false),
     m_percentProgressHasBeenSet(false),
     m_dedicatedLogVolume(false),
-    m_dedicatedLogVolumeHasBeenSet(false)
+    m_dedicatedLogVolumeHasBeenSet(false),
+    m_isStorageConfigUpgradeAvailable(false),
+    m_isStorageConfigUpgradeAvailableHasBeenSet(false),
+    m_multiTenant(false),
+    m_multiTenantHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -827,6 +835,18 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_dedicatedLogVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dedicatedLogVolumeNode.GetText()).c_str()).c_str());
       m_dedicatedLogVolumeHasBeenSet = true;
     }
+    XmlNode isStorageConfigUpgradeAvailableNode = resultNode.FirstChild("IsStorageConfigUpgradeAvailable");
+    if(!isStorageConfigUpgradeAvailableNode.IsNull())
+    {
+      m_isStorageConfigUpgradeAvailable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isStorageConfigUpgradeAvailableNode.GetText()).c_str()).c_str());
+      m_isStorageConfigUpgradeAvailableHasBeenSet = true;
+    }
+    XmlNode multiTenantNode = resultNode.FirstChild("MultiTenant");
+    if(!multiTenantNode.IsNull())
+    {
+      m_multiTenant = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiTenantNode.GetText()).c_str()).c_str());
+      m_multiTenantHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1333,6 +1353,16 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
 
+  if(m_isStorageConfigUpgradeAvailableHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IsStorageConfigUpgradeAvailable=" << std::boolalpha << m_isStorageConfigUpgradeAvailable << "&";
+  }
+
+  if(m_multiTenantHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1752,6 +1782,14 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_dedicatedLogVolumeHasBeenSet)
   {
       oStream << location << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
+  }
+  if(m_isStorageConfigUpgradeAvailableHasBeenSet)
+  {
+      oStream << location << ".IsStorageConfigUpgradeAvailable=" << std::boolalpha << m_isStorageConfigUpgradeAvailable << "&";
+  }
+  if(m_multiTenantHasBeenSet)
+  {
+      oStream << location << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 }
 

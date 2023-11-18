@@ -8,6 +8,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ModifyVerifiedAccessTrustProviderOidcOptions.h>
+#include <aws/ec2/model/ModifyVerifiedAccessTrustProviderDeviceOptions.h>
 #include <aws/ec2/model/VerifiedAccessSseSpecificationRequest.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -115,6 +116,43 @@ namespace Model
      * provider.</p>
      */
     inline ModifyVerifiedAccessTrustProviderRequest& WithOidcOptions(ModifyVerifiedAccessTrustProviderOidcOptions&& value) { SetOidcOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
+     */
+    inline const ModifyVerifiedAccessTrustProviderDeviceOptions& GetDeviceOptions() const{ return m_deviceOptions; }
+
+    /**
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
+     */
+    inline bool DeviceOptionsHasBeenSet() const { return m_deviceOptionsHasBeenSet; }
+
+    /**
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
+     */
+    inline void SetDeviceOptions(const ModifyVerifiedAccessTrustProviderDeviceOptions& value) { m_deviceOptionsHasBeenSet = true; m_deviceOptions = value; }
+
+    /**
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
+     */
+    inline void SetDeviceOptions(ModifyVerifiedAccessTrustProviderDeviceOptions&& value) { m_deviceOptionsHasBeenSet = true; m_deviceOptions = std::move(value); }
+
+    /**
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
+     */
+    inline ModifyVerifiedAccessTrustProviderRequest& WithDeviceOptions(const ModifyVerifiedAccessTrustProviderDeviceOptions& value) { SetDeviceOptions(value); return *this;}
+
+    /**
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
+     */
+    inline ModifyVerifiedAccessTrustProviderRequest& WithDeviceOptions(ModifyVerifiedAccessTrustProviderDeviceOptions&& value) { SetDeviceOptions(std::move(value)); return *this;}
 
 
     /**
@@ -257,32 +295,32 @@ namespace Model
 
 
     /**
-     * <p> Options for server side encryption. </p>
+     * <p>The options for server side encryption.</p>
      */
     inline const VerifiedAccessSseSpecificationRequest& GetSseSpecification() const{ return m_sseSpecification; }
 
     /**
-     * <p> Options for server side encryption. </p>
+     * <p>The options for server side encryption.</p>
      */
     inline bool SseSpecificationHasBeenSet() const { return m_sseSpecificationHasBeenSet; }
 
     /**
-     * <p> Options for server side encryption. </p>
+     * <p>The options for server side encryption.</p>
      */
     inline void SetSseSpecification(const VerifiedAccessSseSpecificationRequest& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = value; }
 
     /**
-     * <p> Options for server side encryption. </p>
+     * <p>The options for server side encryption.</p>
      */
     inline void SetSseSpecification(VerifiedAccessSseSpecificationRequest&& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = std::move(value); }
 
     /**
-     * <p> Options for server side encryption. </p>
+     * <p>The options for server side encryption.</p>
      */
     inline ModifyVerifiedAccessTrustProviderRequest& WithSseSpecification(const VerifiedAccessSseSpecificationRequest& value) { SetSseSpecification(value); return *this;}
 
     /**
-     * <p> Options for server side encryption. </p>
+     * <p>The options for server side encryption.</p>
      */
     inline ModifyVerifiedAccessTrustProviderRequest& WithSseSpecification(VerifiedAccessSseSpecificationRequest&& value) { SetSseSpecification(std::move(value)); return *this;}
 
@@ -293,6 +331,9 @@ namespace Model
 
     ModifyVerifiedAccessTrustProviderOidcOptions m_oidcOptions;
     bool m_oidcOptionsHasBeenSet = false;
+
+    ModifyVerifiedAccessTrustProviderDeviceOptions m_deviceOptions;
+    bool m_deviceOptionsHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

@@ -278,51 +278,116 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to.</p>
+     * distribution groups that phone number inbound traffic is routed through.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to.</p>
+     * distribution groups that phone number inbound traffic is routed through.</p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to.</p>
+     * distribution groups that phone number inbound traffic is routed through.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to.</p>
+     * distribution groups that phone number inbound traffic is routed through.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to.</p>
+     * distribution groups that phone number inbound traffic is routed through.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to.</p>
+     * distribution groups that phone number inbound traffic is routed through.</p>
      */
     inline ClaimedPhoneNumberSummary& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to.</p>
+     * distribution groups that phone number inbound traffic is routed through.</p>
      */
     inline ClaimedPhoneNumberSummary& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to.</p>
+     * distribution groups that phone number inbound traffic is routed through.</p>
      */
     inline ClaimedPhoneNumberSummary& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline ClaimedPhoneNumberSummary& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline ClaimedPhoneNumberSummary& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline ClaimedPhoneNumberSummary& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
@@ -407,18 +472,20 @@ namespace Model
     /**
      * <p>The status of the phone number.</p> <ul> <li> <p> <code>CLAIMED</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
      * or <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
      * operation succeeded.</p> </li> <li> <p> <code>IN_PROGRESS</code> means a <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>,
      * or <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumberMetadata.html">UpdatePhoneNumberMetadata</a>
      * operation is still in progress and has not yet completed. You can call <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
      * at a later time to verify if the previous operation has completed.</p> </li>
      * <li> <p> <code>FAILED</code> indicates that the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
      * or <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
      * operation has failed. It will include a message indicating the failure reason. A
@@ -435,18 +502,20 @@ namespace Model
     /**
      * <p>The status of the phone number.</p> <ul> <li> <p> <code>CLAIMED</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
      * or <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
      * operation succeeded.</p> </li> <li> <p> <code>IN_PROGRESS</code> means a <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>,
      * or <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumberMetadata.html">UpdatePhoneNumberMetadata</a>
      * operation is still in progress and has not yet completed. You can call <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
      * at a later time to verify if the previous operation has completed.</p> </li>
      * <li> <p> <code>FAILED</code> indicates that the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
      * or <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
      * operation has failed. It will include a message indicating the failure reason. A
@@ -463,18 +532,20 @@ namespace Model
     /**
      * <p>The status of the phone number.</p> <ul> <li> <p> <code>CLAIMED</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
      * or <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
      * operation succeeded.</p> </li> <li> <p> <code>IN_PROGRESS</code> means a <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>,
      * or <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumberMetadata.html">UpdatePhoneNumberMetadata</a>
      * operation is still in progress and has not yet completed. You can call <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
      * at a later time to verify if the previous operation has completed.</p> </li>
      * <li> <p> <code>FAILED</code> indicates that the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
      * or <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
      * operation has failed. It will include a message indicating the failure reason. A
@@ -491,18 +562,20 @@ namespace Model
     /**
      * <p>The status of the phone number.</p> <ul> <li> <p> <code>CLAIMED</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
      * or <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
      * operation succeeded.</p> </li> <li> <p> <code>IN_PROGRESS</code> means a <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>,
      * or <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumberMetadata.html">UpdatePhoneNumberMetadata</a>
      * operation is still in progress and has not yet completed. You can call <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
      * at a later time to verify if the previous operation has completed.</p> </li>
      * <li> <p> <code>FAILED</code> indicates that the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
      * or <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
      * operation has failed. It will include a message indicating the failure reason. A
@@ -519,18 +592,20 @@ namespace Model
     /**
      * <p>The status of the phone number.</p> <ul> <li> <p> <code>CLAIMED</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
      * or <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
      * operation succeeded.</p> </li> <li> <p> <code>IN_PROGRESS</code> means a <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>,
      * or <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumberMetadata.html">UpdatePhoneNumberMetadata</a>
      * operation is still in progress and has not yet completed. You can call <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
      * at a later time to verify if the previous operation has completed.</p> </li>
      * <li> <p> <code>FAILED</code> indicates that the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
      * or <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
      * operation has failed. It will include a message indicating the failure reason. A
@@ -547,18 +622,20 @@ namespace Model
     /**
      * <p>The status of the phone number.</p> <ul> <li> <p> <code>CLAIMED</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
      * or <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
      * operation succeeded.</p> </li> <li> <p> <code>IN_PROGRESS</code> means a <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>,
      * or <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumberMetadata.html">UpdatePhoneNumberMetadata</a>
      * operation is still in progress and has not yet completed. You can call <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
      * at a later time to verify if the previous operation has completed.</p> </li>
      * <li> <p> <code>FAILED</code> indicates that the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
      * or <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
      * operation has failed. It will include a message indicating the failure reason. A
@@ -594,6 +671,9 @@ namespace Model
 
     Aws::String m_targetArn;
     bool m_targetArnHasBeenSet = false;
+
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

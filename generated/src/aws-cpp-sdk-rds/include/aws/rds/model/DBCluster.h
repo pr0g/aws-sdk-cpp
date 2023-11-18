@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/rds/model/ScalingConfigurationInfo.h>
+#include <aws/rds/model/RdsCustomClusterConfiguration.h>
 #include <aws/rds/model/ActivityStreamMode.h>
 #include <aws/rds/model/ActivityStreamStatus.h>
 #include <aws/rds/model/WriteForwardingStatus.h>
@@ -18,6 +19,7 @@
 #include <aws/rds/model/MasterUserSecret.h>
 #include <aws/rds/model/LocalWriteForwardingStatus.h>
 #include <aws/rds/model/DBClusterOptionGroupStatus.h>
+#include <aws/rds/model/DBClusterStatusInfo.h>
 #include <aws/rds/model/DBClusterMember.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
 #include <aws/rds/model/DBClusterRole.h>
@@ -1229,6 +1231,47 @@ namespace Model
 
 
     /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const Aws::Vector<DBClusterStatusInfo>& GetStatusInfos() const{ return m_statusInfos; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool StatusInfosHasBeenSet() const { return m_statusInfosHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetStatusInfos(const Aws::Vector<DBClusterStatusInfo>& value) { m_statusInfosHasBeenSet = true; m_statusInfos = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetStatusInfos(Aws::Vector<DBClusterStatusInfo>&& value) { m_statusInfosHasBeenSet = true; m_statusInfos = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& WithStatusInfos(const Aws::Vector<DBClusterStatusInfo>& value) { SetStatusInfos(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& WithStatusInfos(Aws::Vector<DBClusterStatusInfo>&& value) { SetStatusInfos(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& AddStatusInfos(const DBClusterStatusInfo& value) { m_statusInfosHasBeenSet = true; m_statusInfos.push_back(value); return *this; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& AddStatusInfos(DBClusterStatusInfo&& value) { m_statusInfosHasBeenSet = true; m_statusInfos.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The list of DB instances that make up the DB cluster.</p>
      */
     inline const Aws::Vector<DBClusterMember>& GetDBClusterMembers() const{ return m_dBClusterMembers; }
@@ -1977,6 +2020,37 @@ namespace Model
 
     
     inline DBCluster& WithScalingConfigurationInfo(ScalingConfigurationInfo&& value) { SetScalingConfigurationInfo(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const RdsCustomClusterConfiguration& GetRdsCustomClusterConfiguration() const{ return m_rdsCustomClusterConfiguration; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool RdsCustomClusterConfigurationHasBeenSet() const { return m_rdsCustomClusterConfigurationHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetRdsCustomClusterConfiguration(const RdsCustomClusterConfiguration& value) { m_rdsCustomClusterConfigurationHasBeenSet = true; m_rdsCustomClusterConfiguration = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetRdsCustomClusterConfiguration(RdsCustomClusterConfiguration&& value) { m_rdsCustomClusterConfigurationHasBeenSet = true; m_rdsCustomClusterConfiguration = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& WithRdsCustomClusterConfiguration(const RdsCustomClusterConfiguration& value) { SetRdsCustomClusterConfiguration(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& WithRdsCustomClusterConfiguration(RdsCustomClusterConfiguration&& value) { SetRdsCustomClusterConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -3322,6 +3396,9 @@ namespace Model
     Aws::Vector<Aws::String> m_readReplicaIdentifiers;
     bool m_readReplicaIdentifiersHasBeenSet = false;
 
+    Aws::Vector<DBClusterStatusInfo> m_statusInfos;
+    bool m_statusInfosHasBeenSet = false;
+
     Aws::Vector<DBClusterMember> m_dBClusterMembers;
     bool m_dBClusterMembersHasBeenSet = false;
 
@@ -3375,6 +3452,9 @@ namespace Model
 
     ScalingConfigurationInfo m_scalingConfigurationInfo;
     bool m_scalingConfigurationInfoHasBeenSet = false;
+
+    RdsCustomClusterConfiguration m_rdsCustomClusterConfiguration;
+    bool m_rdsCustomClusterConfigurationHasBeenSet = false;
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet = false;

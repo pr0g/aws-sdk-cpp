@@ -20,6 +20,7 @@
 #include <aws/redshift/model/ResizeInfo.h>
 #include <aws/redshift/model/AquaConfiguration.h>
 #include <aws/redshift/model/ReservedNodeExchangeStatus.h>
+#include <aws/redshift/model/SecondaryClusterInfo.h>
 #include <aws/redshift/model/ClusterSecurityGroupMembership.h>
 #include <aws/redshift/model/VpcSecurityGroupMembership.h>
 #include <aws/redshift/model/ClusterParameterGroupStatus.h>
@@ -2576,6 +2577,141 @@ namespace Model
      */
     inline Cluster& WithMasterPasswordSecretKmsKeyId(const char* value) { SetMasterPasswordSecretKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline const Aws::String& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(const Aws::String& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(Aws::String&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(const char* value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType.assign(value); }
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline Cluster& WithIpAddressType(const Aws::String& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline Cluster& WithIpAddressType(Aws::String&& value) { SetIpAddressType(std::move(value)); return *this;}
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline Cluster& WithIpAddressType(const char* value) { SetIpAddressType(value); return *this;}
+
+
+    /**
+     * <p>A boolean value that, if true, indicates that the cluster is deployed in two
+     * Availability Zones.</p>
+     */
+    inline const Aws::String& GetMultiAZ() const{ return m_multiAZ; }
+
+    /**
+     * <p>A boolean value that, if true, indicates that the cluster is deployed in two
+     * Availability Zones.</p>
+     */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p>A boolean value that, if true, indicates that the cluster is deployed in two
+     * Availability Zones.</p>
+     */
+    inline void SetMultiAZ(const Aws::String& value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
+
+    /**
+     * <p>A boolean value that, if true, indicates that the cluster is deployed in two
+     * Availability Zones.</p>
+     */
+    inline void SetMultiAZ(Aws::String&& value) { m_multiAZHasBeenSet = true; m_multiAZ = std::move(value); }
+
+    /**
+     * <p>A boolean value that, if true, indicates that the cluster is deployed in two
+     * Availability Zones.</p>
+     */
+    inline void SetMultiAZ(const char* value) { m_multiAZHasBeenSet = true; m_multiAZ.assign(value); }
+
+    /**
+     * <p>A boolean value that, if true, indicates that the cluster is deployed in two
+     * Availability Zones.</p>
+     */
+    inline Cluster& WithMultiAZ(const Aws::String& value) { SetMultiAZ(value); return *this;}
+
+    /**
+     * <p>A boolean value that, if true, indicates that the cluster is deployed in two
+     * Availability Zones.</p>
+     */
+    inline Cluster& WithMultiAZ(Aws::String&& value) { SetMultiAZ(std::move(value)); return *this;}
+
+    /**
+     * <p>A boolean value that, if true, indicates that the cluster is deployed in two
+     * Availability Zones.</p>
+     */
+    inline Cluster& WithMultiAZ(const char* value) { SetMultiAZ(value); return *this;}
+
+
+    /**
+     * <p>The secondary compute unit of a cluster, if Multi-AZ deployment is turned
+     * on.</p>
+     */
+    inline const SecondaryClusterInfo& GetMultiAZSecondary() const{ return m_multiAZSecondary; }
+
+    /**
+     * <p>The secondary compute unit of a cluster, if Multi-AZ deployment is turned
+     * on.</p>
+     */
+    inline bool MultiAZSecondaryHasBeenSet() const { return m_multiAZSecondaryHasBeenSet; }
+
+    /**
+     * <p>The secondary compute unit of a cluster, if Multi-AZ deployment is turned
+     * on.</p>
+     */
+    inline void SetMultiAZSecondary(const SecondaryClusterInfo& value) { m_multiAZSecondaryHasBeenSet = true; m_multiAZSecondary = value; }
+
+    /**
+     * <p>The secondary compute unit of a cluster, if Multi-AZ deployment is turned
+     * on.</p>
+     */
+    inline void SetMultiAZSecondary(SecondaryClusterInfo&& value) { m_multiAZSecondaryHasBeenSet = true; m_multiAZSecondary = std::move(value); }
+
+    /**
+     * <p>The secondary compute unit of a cluster, if Multi-AZ deployment is turned
+     * on.</p>
+     */
+    inline Cluster& WithMultiAZSecondary(const SecondaryClusterInfo& value) { SetMultiAZSecondary(value); return *this;}
+
+    /**
+     * <p>The secondary compute unit of a cluster, if Multi-AZ deployment is turned
+     * on.</p>
+     */
+    inline Cluster& WithMultiAZSecondary(SecondaryClusterInfo&& value) { SetMultiAZSecondary(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -2748,6 +2884,15 @@ namespace Model
 
     Aws::String m_masterPasswordSecretKmsKeyId;
     bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
+
+    Aws::String m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet = false;
+
+    Aws::String m_multiAZ;
+    bool m_multiAZHasBeenSet = false;
+
+    SecondaryClusterInfo m_multiAZSecondary;
+    bool m_multiAZSecondaryHasBeenSet = false;
   };
 
 } // namespace Model

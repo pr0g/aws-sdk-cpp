@@ -7,8 +7,8 @@
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/redshift-serverless/model/Endpoint.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/redshift-serverless/model/Endpoint.h>
 #include <aws/redshift-serverless/model/WorkgroupStatus.h>
 #include <aws/redshift-serverless/model/ConfigParameter.h>
 #include <utility>
@@ -205,6 +205,119 @@ namespace Model
 
 
     /**
+     * <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
+     */
+    inline const Aws::String& GetCustomDomainCertificateArn() const{ return m_customDomainCertificateArn; }
+
+    /**
+     * <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
+     */
+    inline bool CustomDomainCertificateArnHasBeenSet() const { return m_customDomainCertificateArnHasBeenSet; }
+
+    /**
+     * <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
+     */
+    inline void SetCustomDomainCertificateArn(const Aws::String& value) { m_customDomainCertificateArnHasBeenSet = true; m_customDomainCertificateArn = value; }
+
+    /**
+     * <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
+     */
+    inline void SetCustomDomainCertificateArn(Aws::String&& value) { m_customDomainCertificateArnHasBeenSet = true; m_customDomainCertificateArn = std::move(value); }
+
+    /**
+     * <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
+     */
+    inline void SetCustomDomainCertificateArn(const char* value) { m_customDomainCertificateArnHasBeenSet = true; m_customDomainCertificateArn.assign(value); }
+
+    /**
+     * <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
+     */
+    inline Workgroup& WithCustomDomainCertificateArn(const Aws::String& value) { SetCustomDomainCertificateArn(value); return *this;}
+
+    /**
+     * <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
+     */
+    inline Workgroup& WithCustomDomainCertificateArn(Aws::String&& value) { SetCustomDomainCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
+     */
+    inline Workgroup& WithCustomDomainCertificateArn(const char* value) { SetCustomDomainCertificateArn(value); return *this;}
+
+
+    /**
+     * <p>The expiration time for the certificate.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCustomDomainCertificateExpiryTime() const{ return m_customDomainCertificateExpiryTime; }
+
+    /**
+     * <p>The expiration time for the certificate.</p>
+     */
+    inline bool CustomDomainCertificateExpiryTimeHasBeenSet() const { return m_customDomainCertificateExpiryTimeHasBeenSet; }
+
+    /**
+     * <p>The expiration time for the certificate.</p>
+     */
+    inline void SetCustomDomainCertificateExpiryTime(const Aws::Utils::DateTime& value) { m_customDomainCertificateExpiryTimeHasBeenSet = true; m_customDomainCertificateExpiryTime = value; }
+
+    /**
+     * <p>The expiration time for the certificate.</p>
+     */
+    inline void SetCustomDomainCertificateExpiryTime(Aws::Utils::DateTime&& value) { m_customDomainCertificateExpiryTimeHasBeenSet = true; m_customDomainCertificateExpiryTime = std::move(value); }
+
+    /**
+     * <p>The expiration time for the certificate.</p>
+     */
+    inline Workgroup& WithCustomDomainCertificateExpiryTime(const Aws::Utils::DateTime& value) { SetCustomDomainCertificateExpiryTime(value); return *this;}
+
+    /**
+     * <p>The expiration time for the certificate.</p>
+     */
+    inline Workgroup& WithCustomDomainCertificateExpiryTime(Aws::Utils::DateTime&& value) { SetCustomDomainCertificateExpiryTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The custom domain name associated with the workgroup.</p>
+     */
+    inline const Aws::String& GetCustomDomainName() const{ return m_customDomainName; }
+
+    /**
+     * <p>The custom domain name associated with the workgroup.</p>
+     */
+    inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
+
+    /**
+     * <p>The custom domain name associated with the workgroup.</p>
+     */
+    inline void SetCustomDomainName(const Aws::String& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = value; }
+
+    /**
+     * <p>The custom domain name associated with the workgroup.</p>
+     */
+    inline void SetCustomDomainName(Aws::String&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::move(value); }
+
+    /**
+     * <p>The custom domain name associated with the workgroup.</p>
+     */
+    inline void SetCustomDomainName(const char* value) { m_customDomainNameHasBeenSet = true; m_customDomainName.assign(value); }
+
+    /**
+     * <p>The custom domain name associated with the workgroup.</p>
+     */
+    inline Workgroup& WithCustomDomainName(const Aws::String& value) { SetCustomDomainName(value); return *this;}
+
+    /**
+     * <p>The custom domain name associated with the workgroup.</p>
+     */
+    inline Workgroup& WithCustomDomainName(Aws::String&& value) { SetCustomDomainName(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom domain name associated with the workgroup.</p>
+     */
+    inline Workgroup& WithCustomDomainName(const char* value) { SetCustomDomainName(value); return *this;}
+
+
+    /**
      * <p>The endpoint that is created from the workgroup.</p>
      */
     inline const Endpoint& GetEndpoint() const{ return m_endpoint; }
@@ -265,6 +378,31 @@ namespace Model
 
 
     /**
+     * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
+     * queries. The max capacity is specified in RPUs.</p>
+     */
+    inline int GetMaxCapacity() const{ return m_maxCapacity; }
+
+    /**
+     * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
+     * queries. The max capacity is specified in RPUs.</p>
+     */
+    inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
+
+    /**
+     * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
+     * queries. The max capacity is specified in RPUs.</p>
+     */
+    inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
+
+    /**
+     * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
+     * queries. The max capacity is specified in RPUs.</p>
+     */
+    inline Workgroup& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
+
+
+    /**
      * <p>The namespace the workgroup is associated with.</p>
      */
     inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
@@ -303,6 +441,71 @@ namespace Model
      * <p>The namespace the workgroup is associated with.</p>
      */
     inline Workgroup& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
+
+
+    /**
+     * <p>The patch version of your Amazon Redshift Serverless workgroup. For more
+     * information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline const Aws::String& GetPatchVersion() const{ return m_patchVersion; }
+
+    /**
+     * <p>The patch version of your Amazon Redshift Serverless workgroup. For more
+     * information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline bool PatchVersionHasBeenSet() const { return m_patchVersionHasBeenSet; }
+
+    /**
+     * <p>The patch version of your Amazon Redshift Serverless workgroup. For more
+     * information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline void SetPatchVersion(const Aws::String& value) { m_patchVersionHasBeenSet = true; m_patchVersion = value; }
+
+    /**
+     * <p>The patch version of your Amazon Redshift Serverless workgroup. For more
+     * information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline void SetPatchVersion(Aws::String&& value) { m_patchVersionHasBeenSet = true; m_patchVersion = std::move(value); }
+
+    /**
+     * <p>The patch version of your Amazon Redshift Serverless workgroup. For more
+     * information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline void SetPatchVersion(const char* value) { m_patchVersionHasBeenSet = true; m_patchVersion.assign(value); }
+
+    /**
+     * <p>The patch version of your Amazon Redshift Serverless workgroup. For more
+     * information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline Workgroup& WithPatchVersion(const Aws::String& value) { SetPatchVersion(value); return *this;}
+
+    /**
+     * <p>The patch version of your Amazon Redshift Serverless workgroup. For more
+     * information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline Workgroup& WithPatchVersion(Aws::String&& value) { SetPatchVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The patch version of your Amazon Redshift Serverless workgroup. For more
+     * information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline Workgroup& WithPatchVersion(const char* value) { SetPatchVersion(value); return *this;}
 
 
     /**
@@ -600,6 +803,71 @@ namespace Model
      */
     inline Workgroup& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Redshift Serverless version of your workgroup. For more
+     * information about Amazon Redshift Serverless versions, see<a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline const Aws::String& GetWorkgroupVersion() const{ return m_workgroupVersion; }
+
+    /**
+     * <p>The Amazon Redshift Serverless version of your workgroup. For more
+     * information about Amazon Redshift Serverless versions, see<a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline bool WorkgroupVersionHasBeenSet() const { return m_workgroupVersionHasBeenSet; }
+
+    /**
+     * <p>The Amazon Redshift Serverless version of your workgroup. For more
+     * information about Amazon Redshift Serverless versions, see<a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline void SetWorkgroupVersion(const Aws::String& value) { m_workgroupVersionHasBeenSet = true; m_workgroupVersion = value; }
+
+    /**
+     * <p>The Amazon Redshift Serverless version of your workgroup. For more
+     * information about Amazon Redshift Serverless versions, see<a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline void SetWorkgroupVersion(Aws::String&& value) { m_workgroupVersionHasBeenSet = true; m_workgroupVersion = std::move(value); }
+
+    /**
+     * <p>The Amazon Redshift Serverless version of your workgroup. For more
+     * information about Amazon Redshift Serverless versions, see<a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline void SetWorkgroupVersion(const char* value) { m_workgroupVersionHasBeenSet = true; m_workgroupVersion.assign(value); }
+
+    /**
+     * <p>The Amazon Redshift Serverless version of your workgroup. For more
+     * information about Amazon Redshift Serverless versions, see<a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline Workgroup& WithWorkgroupVersion(const Aws::String& value) { SetWorkgroupVersion(value); return *this;}
+
+    /**
+     * <p>The Amazon Redshift Serverless version of your workgroup. For more
+     * information about Amazon Redshift Serverless versions, see<a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline Workgroup& WithWorkgroupVersion(Aws::String&& value) { SetWorkgroupVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Redshift Serverless version of your workgroup. For more
+     * information about Amazon Redshift Serverless versions, see<a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     * versions for Amazon Redshift</a>.</p>
+     */
+    inline Workgroup& WithWorkgroupVersion(const char* value) { SetWorkgroupVersion(value); return *this;}
+
   private:
 
     int m_baseCapacity;
@@ -611,14 +879,29 @@ namespace Model
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet = false;
 
+    Aws::String m_customDomainCertificateArn;
+    bool m_customDomainCertificateArnHasBeenSet = false;
+
+    Aws::Utils::DateTime m_customDomainCertificateExpiryTime;
+    bool m_customDomainCertificateExpiryTimeHasBeenSet = false;
+
+    Aws::String m_customDomainName;
+    bool m_customDomainNameHasBeenSet = false;
+
     Endpoint m_endpoint;
     bool m_endpointHasBeenSet = false;
 
     bool m_enhancedVpcRouting;
     bool m_enhancedVpcRoutingHasBeenSet = false;
 
+    int m_maxCapacity;
+    bool m_maxCapacityHasBeenSet = false;
+
     Aws::String m_namespaceName;
     bool m_namespaceNameHasBeenSet = false;
+
+    Aws::String m_patchVersion;
+    bool m_patchVersionHasBeenSet = false;
 
     int m_port;
     bool m_portHasBeenSet = false;
@@ -643,6 +926,9 @@ namespace Model
 
     Aws::String m_workgroupName;
     bool m_workgroupNameHasBeenSet = false;
+
+    Aws::String m_workgroupVersion;
+    bool m_workgroupVersionHasBeenSet = false;
   };
 
 } // namespace Model

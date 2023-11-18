@@ -679,6 +679,48 @@ namespace SSM
         }
 
         /**
+         * <p>Delete an OpsItem. You must have permission in Identity and Access Management
+         * (IAM) to delete an OpsItem. </p>  <p>Note the following important
+         * information about this operation.</p> <ul> <li> <p>Deleting an OpsItem is
+         * irreversible. You can't restore a deleted OpsItem.</p> </li> <li> <p>This
+         * operation uses an <i>eventual consistency model</i>, which means the system can
+         * take a few minutes to complete this operation. If you delete an OpsItem and
+         * immediately call, for example, <a>GetOpsItem</a>, the deleted OpsItem might
+         * still appear in the response. </p> </li> <li> <p>This operation is idempotent.
+         * The system doesn't throw an exception if you repeatedly call this operation for
+         * the same OpsItem. If the first call is successful, all additional calls return
+         * the same successful response as the first call.</p> </li> <li> <p>This operation
+         * doesn't support cross-account calls. A delegated administrator or management
+         * account can't delete OpsItems in other accounts, even if OpsCenter has been set
+         * up for cross-account administration. For more information about cross-account
+         * administration, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setting-up-cross-account.html">Setting
+         * up OpsCenter to centrally manage OpsItems across accounts</a> in the <i>Systems
+         * Manager User Guide</i>.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsItem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteOpsItemOutcome DeleteOpsItem(const Model::DeleteOpsItemRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteOpsItem that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteOpsItemRequestT = Model::DeleteOpsItemRequest>
+        Model::DeleteOpsItemOutcomeCallable DeleteOpsItemCallable(const DeleteOpsItemRequestT& request) const
+        {
+            return SubmitCallable(&SSMClient::DeleteOpsItem, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteOpsItem that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteOpsItemRequestT = Model::DeleteOpsItemRequest>
+        void DeleteOpsItemAsync(const DeleteOpsItemRequestT& request, const DeleteOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMClient::DeleteOpsItem, request, handler, context);
+        }
+
+        /**
          * <p>Delete OpsMetadata related to an application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsMetadata">AWS
          * API Reference</a></p>

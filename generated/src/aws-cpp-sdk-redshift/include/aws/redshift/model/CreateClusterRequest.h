@@ -2287,6 +2287,129 @@ namespace Model
      */
     inline CreateClusterRequest& WithMasterPasswordSecretKmsKeyId(const char* value) { SetMasterPasswordSecretKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The IP address types that the cluster supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline const Aws::String& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address types that the cluster supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The IP address types that the cluster supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(const Aws::String& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address types that the cluster supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(Aws::String&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The IP address types that the cluster supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(const char* value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType.assign(value); }
+
+    /**
+     * <p>The IP address types that the cluster supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline CreateClusterRequest& WithIpAddressType(const Aws::String& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address types that the cluster supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline CreateClusterRequest& WithIpAddressType(Aws::String&& value) { SetIpAddressType(std::move(value)); return *this;}
+
+    /**
+     * <p>The IP address types that the cluster supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline CreateClusterRequest& WithIpAddressType(const char* value) { SetIpAddressType(value); return *this;}
+
+
+    /**
+     * <p>If true, Amazon Redshift will deploy the cluster in two Availability Zones
+     * (AZ).</p>
+     */
+    inline bool GetMultiAZ() const{ return m_multiAZ; }
+
+    /**
+     * <p>If true, Amazon Redshift will deploy the cluster in two Availability Zones
+     * (AZ).</p>
+     */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p>If true, Amazon Redshift will deploy the cluster in two Availability Zones
+     * (AZ).</p>
+     */
+    inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
+
+    /**
+     * <p>If true, Amazon Redshift will deploy the cluster in two Availability Zones
+     * (AZ).</p>
+     */
+    inline CreateClusterRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center
+     * application.</p>
+     */
+    inline const Aws::String& GetRedshiftIdcApplicationArn() const{ return m_redshiftIdcApplicationArn; }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center
+     * application.</p>
+     */
+    inline bool RedshiftIdcApplicationArnHasBeenSet() const { return m_redshiftIdcApplicationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center
+     * application.</p>
+     */
+    inline void SetRedshiftIdcApplicationArn(const Aws::String& value) { m_redshiftIdcApplicationArnHasBeenSet = true; m_redshiftIdcApplicationArn = value; }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center
+     * application.</p>
+     */
+    inline void SetRedshiftIdcApplicationArn(Aws::String&& value) { m_redshiftIdcApplicationArnHasBeenSet = true; m_redshiftIdcApplicationArn = std::move(value); }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center
+     * application.</p>
+     */
+    inline void SetRedshiftIdcApplicationArn(const char* value) { m_redshiftIdcApplicationArnHasBeenSet = true; m_redshiftIdcApplicationArn.assign(value); }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center
+     * application.</p>
+     */
+    inline CreateClusterRequest& WithRedshiftIdcApplicationArn(const Aws::String& value) { SetRedshiftIdcApplicationArn(value); return *this;}
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center
+     * application.</p>
+     */
+    inline CreateClusterRequest& WithRedshiftIdcApplicationArn(Aws::String&& value) { SetRedshiftIdcApplicationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center
+     * application.</p>
+     */
+    inline CreateClusterRequest& WithRedshiftIdcApplicationArn(const char* value) { SetRedshiftIdcApplicationArn(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -2396,6 +2519,15 @@ namespace Model
 
     Aws::String m_masterPasswordSecretKmsKeyId;
     bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
+
+    Aws::String m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet = false;
+
+    bool m_multiAZ;
+    bool m_multiAZHasBeenSet = false;
+
+    Aws::String m_redshiftIdcApplicationArn;
+    bool m_redshiftIdcApplicationArnHasBeenSet = false;
   };
 
 } // namespace Model

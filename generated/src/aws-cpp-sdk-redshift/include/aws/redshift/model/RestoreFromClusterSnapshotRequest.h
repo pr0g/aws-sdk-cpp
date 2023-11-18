@@ -1990,6 +1990,80 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithMasterPasswordSecretKmsKeyId(const char* value) { SetMasterPasswordSecretKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline const Aws::String& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(const Aws::String& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(Aws::String&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(const char* value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType.assign(value); }
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithIpAddressType(const Aws::String& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithIpAddressType(Aws::String&& value) { SetIpAddressType(std::move(value)); return *this;}
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithIpAddressType(const char* value) { SetIpAddressType(value); return *this;}
+
+
+    /**
+     * <p>If true, the snapshot will be restored to a cluster deployed in two
+     * Availability Zones.</p>
+     */
+    inline bool GetMultiAZ() const{ return m_multiAZ; }
+
+    /**
+     * <p>If true, the snapshot will be restored to a cluster deployed in two
+     * Availability Zones.</p>
+     */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p>If true, the snapshot will be restored to a cluster deployed in two
+     * Availability Zones.</p>
+     */
+    inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
+
+    /**
+     * <p>If true, the snapshot will be restored to a cluster deployed in two
+     * Availability Zones.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -2096,6 +2170,12 @@ namespace Model
 
     Aws::String m_masterPasswordSecretKmsKeyId;
     bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
+
+    Aws::String m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet = false;
+
+    bool m_multiAZ;
+    bool m_multiAZHasBeenSet = false;
   };
 
 } // namespace Model
